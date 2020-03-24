@@ -54,3 +54,41 @@ archer1.attack()
 
 # Polymorphism : It is the ability of an object to take on many forms.
 # In above example attack methos is same in two class butit means different to different objects.
+
+
+#Multiple Inheritance
+
+class User():
+    def sign_in(self):
+        print('Log in')
+
+class Wizard(User):
+    def __init__(self, name, power):
+        self.name =  name
+        self.power = power
+
+    def attack(self):
+        print(self.power, self.name)
+
+class Archer(User):
+    def __init__(self, name, arrow):
+        self.name = name
+        self.arrow = arrow
+
+    def check_arrow(self):
+        print(self.arrow, self.name)
+
+    def run(self):
+        print('Running')
+
+class MultiInherit(Wizard, Archer):
+    def __init__(self, name, power, arrow):
+        Wizard.__init__(self, name, power)
+        Archer.__init__(self, name, arrow)
+
+M1 = MultiInherit('Rohit', 20, 50)
+
+M1.attack()
+M1.check_arrow()
+M1.run()
+M1.sign_in()
