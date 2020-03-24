@@ -53,4 +53,4 @@ wizard1.attack()
 archer1.attack()
 
 # Polymorphism : It is the ability of an object to take on many forms.
-# In above example attack methos is same in two class butit means different to different objects
+# In above example attack methos is same in two class butit means different to different objects.
