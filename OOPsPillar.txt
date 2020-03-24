@@ -1,0 +1,56 @@
+# four pillars
+# Encapsulation: It describes the idea of bundling data and methods that work on that data within one unit, e.g., a class in Java.
+
+class Encap():
+    def __init__(self,name):
+        self.name=name
+    def func1(self):
+        print(self.name)
+
+E1 = Encap('Eancapsulation')
+E1.func1()
+
+# Abstraction: Its main goal is to handle complexity by hiding unnecessary details from the user. e.g. Bulit-In Function
+# count method has complex code written but we are not writing those instead we are using count
+
+class Abstr():
+    def __init__(self,name):
+        self.name=name
+    def func1(self):
+        return self.name
+
+A1 = Abstr('Abstraction')
+x = A1.func1()
+print(x.count('a'))
+
+# Inheritance: Inherit property of parent by child
+
+class User():
+#we are not adding nit method as we are not creating instance for User
+    def sign_in(self):
+        print('Log in')
+
+class Wizard(User):
+    def __init__(self, name, power):
+        self.name =  name
+        self.power = power
+
+    def attack(self):
+        print(self.power)
+
+class Archer(User):
+    def __init__(self, name, arrow):
+        self.name = name
+        self.arrow = arrow
+
+    def attack(self):
+        print(self.arrow)
+
+wizard1=Wizard('Rohit',50)
+archer1=Archer('Kumar',100)
+
+wizard1.attack()
+archer1.attack()
+
+# Polymorphism : It is the ability of an object to take on many forms.
+# In above example attack methos is same in two class butit means different to different objects
