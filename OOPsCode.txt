@@ -1,0 +1,21 @@
+# Object Oriented Programming
+# Objects: Instance of class
+# Objects have method which can be accessed using dot operator.
+# We can create our own class and objects and methods
+
+# class : blueprint
+
+class Oops:
+
+    def __init__(self, name):
+        self.name = name
+
+ #Note:__init__ method is automatically called whenever an instance if class is created/ object is created
+
+    def run(self):
+        print('run')
+# as run function is not returning anything so in output we will get none also
+
+obj1 = Oops('Rohit')
+print(obj1.name)
+print(obj1.run())
