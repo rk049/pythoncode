@@ -7,15 +7,21 @@
 
 class Oops:
 
+    #Class Object Attribute and it is static and is called by classname.(XX)
+    Membership = True
+
     def __init__(self, name):
-        self.name = name
+        if (Oops.Membership):
+            self.name = name
 
  #Note:__init__ method is automatically called whenever an instance if class is created/ object is created
 
-    def run(self):
+    def run(self,age):
         print('run')
+        print(f'My name is {self.name} and age is {age}')
+
 # as run function is not returning anything so in output we will get none also
 
 obj1 = Oops('Rohit')
 print(obj1.name)
-print(obj1.run())
+print(obj1.run(18))
