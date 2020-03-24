@@ -1,0 +1,20 @@
+class User():
+    def __init__(self, age):
+        self.age = age
+
+    def sign_in(self):
+        print('Log in')
+
+class Wizard(User):
+    def __init__(self, name, power, age):
+        super().__init__(age)
+        self.name =  name
+        self.power = power
+
+    def attack(self):
+        print(self.power, self.name, self.age)
+
+
+wizard1=Wizard('Rohit',50, 18)
+wizard1.sign_in()
+wizard1.attack()
