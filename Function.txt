@@ -1,0 +1,52 @@
+
+'''
+
+def multiply(li):
+    mul = []
+    try:
+        for i in li:
+            mul.append(i*2)
+        mul1 = tuple(mul)
+        print(mul1)
+    except:
+        print('Error')
+
+
+multiply([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
+
+'''
+
+#lambda : Simplify the code
+
+'''
+
+def multiply(item):
+    return item*2
+
+print(list(map(multiply, [1,2,3])))
+print(tuple(map(multiply, [1,2,3])))
+print(set(map(multiply, [1,2,3])))
+'''
+
+'''
+#lambda param : action
+
+x = lambda a, b, c: a+b+c
+print(x(1, 2, 3))
+
+print(list(map(lambda item: item*2, [1,2,3])))
+
+print(list(map(lambda item: item*item, [1,2,3])))
+
+'''
+
+#list comprehension
+lis=[1,2,3]
+my_list = [i*2 for i in lis if i >= 1]
+print(my_list)
+
+#if-else
+temp = [22.1, 23.4, 34.0]
+new_temp = [i/10 if i != -999 else 0 for i in temp]
+print(new_temp)
+
