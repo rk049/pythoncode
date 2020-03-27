@@ -11,6 +11,7 @@ while True:
         print('Thank You')
         break
 
+
 '''
 
 def add(a, b):
@@ -18,5 +19,7 @@ def add(a, b):
         return a+b
     except ArithmeticError as Err:
         raise Err
+    finally:
+        print('Thank You')
 
 add(1,'2')
