@@ -1,0 +1,22 @@
+'''
+
+while True:
+
+    try:
+        age = int(input('Enter Age: '))
+        print(age)
+    except:
+        print('Enter Correct Value')
+    else:
+        print('Thank You')
+        break
+
+'''
+
+def add(a, b):
+    try:
+        return a+b
+    except ArithmeticError as Err:
+        raise Err
+
+add(1,'2')
