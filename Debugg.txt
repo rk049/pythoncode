@@ -1,0 +1,12 @@
+import pdb
+
+def add(a, b):
+    pdb.set_trace()
+    print(a, b)
+    return a+b
+
+print(add(2, 'R'))
+
+#(pdb) help
+#(pdb) list : list source code
+#(pdb) step : run debugging step by step
