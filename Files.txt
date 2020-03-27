@@ -1,0 +1,62 @@
+'''
+
+Mode	Description
+'r'	    Open a file for reading. (default)
+'w'	    Open a file for writing. Creates a new file if it does not exist or truncates the file if it exists.
+'x'	    Open a file for exclusive creation. If the file already exists, the operation fails.
+'a'	    Open for appending at the end of the file without truncating it. Creates a new file if it does not exist.
+'t'	    Open in text mode. (default)
+'b'	    Open in binary mode.
+'r+'	    Open a file for updating (reading and writing)
+
+'''
+
+'''
+#read
+with open('test.txt', mode='r') as my_file:
+    print(my_file.read()) #read all lines
+    print(my_file.readlines()) #prepare list of all lines
+    
+'''
+
+'''
+#read-write
+
+with open('test.txt', mode='r+') as my_file:
+    text = my_file.write('Hey!! It\'s me') # read-write mode will read the file, place the cursor at beginning and overwrite the file
+    print(text)
+    print(my_file.read())
+'''
+
+'''
+#append: add lines at the end
+
+with open('test.txt', mode='a') as my_file:
+    text = my_file.write('Hey!! It\'s me again at end')
+    print(text)
+'''
+
+'''
+#write
+
+with open('test.txt', mode='w') as my_file:
+    text = my_file.write('Hey!! It\'s me') # write mode will consider new file and write it
+    print(text)
+
+'''
+
+# common format
+
+try:
+    with open('test.txt', mode='r') as my_file:
+        print(my_file.read())
+    with open('demo.txt', mode='r') as my_file1:
+        print(my_file1.read())
+except:
+    print('Invalid')
+
+'''
+except FileNotFoundError as err:
+    print('Invalid')
+    raise err
+'''
