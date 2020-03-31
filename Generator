@@ -1,0 +1,63 @@
+#Generator is Iterable but Iterator is not Generator
+#e.g : Range is generator and iterable
+# list is iterable but not generator
+#It is fairly simple to create a generator in Python.
+# It is as easy as defining a normal function with yield statement instead of a return statement.
+
+# A Python program to demonstrate use of generator object with next()
+
+# A generator function
+def simpleGeneratorFun():
+    yield 1
+    yield 2
+    yield 3
+
+# x is a generator object
+x = simpleGeneratorFun()
+
+# Iterating over the generator object using next
+print(x.__next__());
+print(x.__next__());
+print(x.__next__());
+
+#Using for loop
+
+def simpleGeneratorFun():
+    yield 1
+    yield 2
+    yield 3
+
+
+# Driver code to check above generator function
+for value in simpleGeneratorFun():
+    print(value)
+
+#Fibbonacci
+
+# A simple generator for Fibonacci Numbers
+def fib(num):
+    # Initialize first two Fibonacci Numbers
+    a, b = 0, 1
+
+    # One by one yield next Fibonacci Number
+    while a < num:
+        yield a
+        a, b = b, a + b
+
+    # Create a generator object
+
+x = fib(5)
+'''
+# Iterating over the generator object using next 
+print(x.next());  # In Python 3, __next__() 
+print(x.next());
+print(x.next());
+print(x.next());
+print(x.next());
+'''
+
+
+# Iterating over the generator object using for in loop.
+print("\nUsing for in loop")
+for i in fib(5):
+    print(i)
