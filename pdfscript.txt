@@ -1,0 +1,18 @@
+import PyPDF2
+
+'''
+with open('dummy.pdf', 'rb') as file:
+    #we use rb as we need to convert file object to binary as it is pdf
+    reader = PyPDF2.PdfFileReader(file)
+    print(reader.numPages)
+'''
+with open('dummy.pdf', 'rb') as file:
+    #we use rb as we need to convert file object to binary as it is pdf
+    reader = PyPDF2.PdfFileReader(file)
+    page = reader.getPage(0) #get the content at 1st page
+    page.rotateCounterClockwise(90) # rotated the page content by 90
+
+    writer = PyPDF2.PdfFileWriter() # created a write object
+    writer.addPage(page) #added page in write object
+    with open('tilt.pdf', 'wb') as new_file:
+        writer.write(new_file)

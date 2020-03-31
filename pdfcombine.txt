@@ -1,0 +1,17 @@
+import PyPDF2
+
+with open('super.pdf', 'rb') as file1:
+    template1 = PyPDF2.PdfFileReader(file1)
+
+    with open('wtr.pdf', 'rb') as file2:
+        template2 = PyPDF2.PdfFileReader(file2)
+
+        output = PyPDF2.PdfFileWriter()
+
+        for i in range(template1.getNumPages()):
+            page = template1.getPage(i)
+            page.mergePage(template2.getPage(0)) # since wtr has only one page
+            output.addPage(page)
+
+            with open('watermarked.pdf', 'wb') as file3:
+                 output.write(file3)
