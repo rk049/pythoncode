@@ -1,0 +1,55 @@
+#Decorator supercarge the function/ add mre functionalities
+
+'''
+def MyDecorator(func):
+    def Wrap():
+        print('*****')
+        func()
+        print('*****')
+
+def Hello():
+    print('Hello')
+
+def Bye():
+    print('Bye')
+
+Hello()
+Bye()
+'''
+
+'''
+def MyDecorator(func):
+    def Wrap():
+        print('*****')
+        func()
+        print('*****')
+    return Wrap
+@MyDecorator
+def Hello():
+    print('Hello')
+
+def Bye():
+    print('Bye')
+
+Hello()
+Bye()
+'''
+'''
+def MyDecorator(func):
+    def Wrap():
+        print('*****')
+        func()
+        print('*****')
+    return Wrap
+
+@MyDecorator
+def Hello():
+    print('Hello')
+
+@MyDecorator
+def Bye():
+    print('Bye')
+
+Hello()
+Bye()
+'''
