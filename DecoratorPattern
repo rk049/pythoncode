@@ -1,0 +1,12 @@
+def MyDecorator(func):
+    def Wrap(*args, **kwargs):
+        print('*****')
+        func(*args, **kwargs)
+        print('*****')
+    return Wrap
+
+@MyDecorator
+def Hello(Text, Emoji, Feel):
+    print(Text, Emoji, Feel)
+
+Hello('Hi', ':)', 'Happy')
