@@ -1,0 +1,38 @@
+from PIL import Image
+
+#Open Image
+# ./ means current directory
+img = Image.open('./images/pic1.jpg')
+
+img1 = Image.open('./images/pic2.jpg')
+img3 = Image.open('./images/pic3.jpg')
+print(img.format)
+print(img.size)
+print(type(img))
+print(img.mode)
+
+'''
+#Image rotate & show
+img.rotate(45).show()
+
+#Image reize
+print(img1.size)
+img2 = img1.resize((100, 100))
+img2.save("resize.png", "png")
+print(img2.size)
+'''
+
+# resize will compress the image so instead of it we can use thumbnail it will keep the aspect ratio and will not compresss image
+
+how = Image.open('./images/howrah.jpg')
+print(how.size)
+how.thumbnail((400, 300))
+how.save('howresize.png', 'png')
+
+'''
+# crop image
+
+cropped = img3.crop((100, 100, 100, 100))
+cropped.save("cropped.png", "png")
+cropped.show()
+'''

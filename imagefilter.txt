@@ -1,0 +1,15 @@
+from PIL import Image, ImageFilter
+
+#Open Image
+# ./ means current directory
+img = Image.open('./images/pic1.jpg')
+img1 = Image.open('./images/pic4.jpg')
+filtered_img = img.filter(ImageFilter.SHARPEN)
+
+#save image
+filtered_img.save("sharpen.png", "png")
+filtered_img1 = img1.convert('L') #format conversion
+filtered_img1.save("convert.png", "png")
+filtered_img.show()
+img.show()
+filtered_img1.show()

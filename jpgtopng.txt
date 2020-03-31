@@ -1,0 +1,31 @@
+import sys
+import os
+from PIL import Image
+#run in command promt
+#grab 1st and 2nd argument
+'''
+python JPGtoPNG.py images\ new\
+JPGtoPNG.py : agrv[0]
+images : agrv[1]
+new : agrv[2]
+'''
+
+image_folder = sys.argv[1]
+output_folder = sys.argv[2]
+print(image_folder, output_folder)
+
+#check is new/ exist or create one
+
+if not os.path.exists(output_folder):
+    os.makedirs(output_folder) # new folder created
+
+#loop through images
+#convert images
+#save to new folder
+
+for files in os.listdir(image_folder):
+    img = Image.open(f'{image_folder}{files}')
+    namewithoutjpgextension = os.path.splitext(files)[0] #split .jpg from images
+    img.save(f'{output_folder}{namewithoutjpgextension}.png', 'png')
+    print('done!')
+
