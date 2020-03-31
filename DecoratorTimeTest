@@ -1,0 +1,22 @@
+from time import time
+
+def performance(func):
+    def Wrapper(*args, **kwargs):
+        t1 = time()
+        func(*args, **kwargs)
+        t2 = time()
+        print(f'time taken {t2 - t1} sec')
+    return Wrapper
+
+
+
+@performance
+def Mul():
+    for i in range(10001):
+        x = i*5
+        if x>49999:
+            print(x)
+        else:
+            pass
+
+Mul()
