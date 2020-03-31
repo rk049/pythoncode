@@ -1,0 +1,16 @@
+import re
+
+pattern = re.compile('This')
+pattern1 = re.compile('Hi I am Rohit! This is my PC. This is where I write code!!!')
+pattern2 = re.compile('Hi I am Rohit! This is my PC. This is where I write code!!!')
+string = 'Hi I am Rohit! This is my PC. This is where I write code!!!'
+string1 = 'Hi I am Rohit! This is my PC. This is where I write code!!!'
+string2 = 'Hi I am Rohit! This is my PC. This is where I write code!!! Python'
+a = pattern.search(string)
+b = pattern.findall(string)
+c = pattern1.fullmatch(string1) #complete match
+d = pattern2.match(string2) #partial match
+print(a)
+print(b)
+print(c)
+print(d)
